@@ -14,6 +14,8 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
+import javax.servlet.ServletContext;
+import m10r.auxiliares.reporteFacturaVenta;
 import m10r.dao.VentaDao;
 import m10r.dao.PersonaDao;
 import m10r.dao.ProductoDao;
@@ -489,7 +491,7 @@ public class VentaBean implements Serializable {
         this.disableBoton();
     }
     
-    public void ingresarVentaFULL(){ /// aún por definir DESCUENTOS !!!!!!!!!!
+    /*public void ingresarVentaFULL(){ /// aún por definir DESCUENTOS !!!!!!!!!!
         
         try {
             this.sessionProducto = HibernateUtil.getSessionFactory().openSession();
@@ -566,6 +568,80 @@ public class VentaBean implements Serializable {
                 
         }
         
+    }*/
+    
+    public void ingresarVentaFULL(){ /// aún por definir DESCUENTOS !!!!!!!!!!
+        this.sessionVenta = null;
+        this.transactionVenta = null;
+        this.empleado.setIdEmpleado(1); /// aún por definir idEmpleado !!!!!!!!!!
+        this.tipoTransaccion.setIdTipoTransaccion(1); /// aún por definir idTipo de Transacción Contado ó Credito !!!!!!!!!
+        
+        try {
+                this.sessionVenta = HibernateUtil.getSessionFactory().openSession();
+                ProductoDao pDao = new ProductoImp();
+                VentaDao cDao = new VentaImp();
+                DetalleVentaDao dcDao = new DetalleVentaImp();
+                
+                this.transactionVenta = this.sessionVenta.beginTransaction();
+                
+                this.venta.setNumeroVenta(Long.toString(this.numeroVenta));
+                this.venta.setIdEmpleado(this.empleado.getIdEmpleado());
+                this.venta.setIdPersona(this.persona.getIdPersona());
+                this.venta.setIdTipoTransaccion(this.tipoTransaccion.getIdTipoTransaccion());
+                
+                cDao.ingresarVenta(this.sessionVenta, this.venta);
+           
+                this.venta = cDao.obtenerUltimoRegistroVenta(this.sessionVenta);
+                
+                for (DetalleVenta detalleVentaTotal : listaDetalleVenta){
+                    this.producto = pDao.obtenerProductoPorCodigoProducto(this.sessionVenta, detalleVentaTotal.getCodigoProducto());
+                    detalleVentaTotal.setIdVenta(this.venta.getIdVenta());
+                    detalleVentaTotal.setIdProducto(this.producto.getIdProducto());
+                    
+                    dcDao.ingresarDetalleVenta(this.sessionVenta, detalleVentaTotal);
+                }
+                this.transactionVenta.commit();
+                    FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO,"","Venta Registrada"));
+                    
+                    this.limpiarFacturaVenta();
+                    
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            if (this.transactionVenta!=null){
+                this.transactionVenta.rollback();
+            }
+        } finally {
+            if (this.sessionVenta!=null){
+                this.sessionVenta.close();
+            }
+        }
+    }
+    
+    public void reporteImpresionFacturaVenta() throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+
+        System.out.println("Testeadooo");
+        /*this.empleado.setIdEmpleado(uBean.getUsuario().getIdEmpleado());*/
+        this.empleado.setIdEmpleado(1);
+        System.out.println("Salomeeeee Test");
+        int idP = this.persona.getIdPersona();
+        int idE = this.empleado.getIdEmpleado();
+        int idC = this.venta.getIdVenta() + 1;
+
+        this.ingresarVentaFULL();
+
+        reporteFacturaVenta rFactura = new reporteFacturaVenta();
+
+        FacesContext facesContext = FacesContext.getCurrentInstance();
+        ServletContext servletContext = (ServletContext) facesContext.getExternalContext().getContext();
+        String ruta = servletContext.getRealPath("/reportes/reporteVenta.jasper");
+
+        System.out.println("Cliente: " + idP);
+        System.out.println("Vendedor: " + idE);
+        System.out.println("Factura: " + idC);
+
+        rFactura.getReporte(ruta, idP, idE, idC);
+        FacesContext.getCurrentInstance().responseComplete();
+               
     }
     
 }

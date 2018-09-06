@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="296" pageHeight="503" columnWidth="266" leftMargin="15" rightMargin="15" topMargin="10" bottomMargin="7" uuid="e00973bd-8dec-4860-9ffd-6e4b9e61d637">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="296" pageHeight="503" columnWidth="268" leftMargin="14" rightMargin="14" topMargin="10" bottomMargin="7" uuid="e00973bd-8dec-4860-9ffd-6e4b9e61d637">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -63,14 +63,11 @@ detalleCompra.idCompra=$P{idCompra}]]>
 	<title>
 		<band height="129" splitType="Stretch">
 			<image>
-				<reportElement x="21" y="2" width="222" height="109" uuid="539ba6b1-d4cf-4a08-9695-4e818a35a112"/>
-				<imageExpression><![CDATA["/Users/CSR/NetBeansProjects/moto10racingHBT/web/imgs/m10r-Logo.jpg"]]></imageExpression>
+				<reportElement x="27" y="4" width="203" height="103" uuid="be63fb87-42b5-4d2a-a593-e9e9d7471583"/>
+				<imageExpression><![CDATA["C:\\Users\\lenovo\\Documents\\NetBeansProjects\\moto10racingZzz\\web\\imgs\\m10r-Logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="52" y="115" width="165" height="13" uuid="918c8333-d499-4731-88a4-7278cea66f5f"/>
-				<textElement>
-					<font fontName="Helvetica" size="13" isBold="true"/>
-				</textElement>
+				<reportElement x="72" y="108" width="127" height="20" uuid="283340d4-2100-4424-9872-d3333de55be2"/>
 				<text><![CDATA[REGIMEN SIMPLIFICADO]]></text>
 			</staticText>
 		</band>
@@ -242,11 +239,11 @@ detalleCompra.idCompra=$P{idCompra}]]>
 				<text><![CDATA[Total Compra:]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="5" y="40" width="258" height="76" uuid="2f5a76f0-8f2f-455e-8df4-ec37da4e6c63"/>
+				<reportElement x="5" y="40" width="257" height="76" uuid="2f5a76f0-8f2f-455e-8df4-ec37da4e6c63"/>
 				<textElement textAlignment="Center">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<text><![CDATA[Es obligatorio presentar esta Factura Original para efectos de reclamos y garantías de Accesorios y Repuestos. La garantía en llantas es de tres meses por defectos de fabricación, no se aceptan llantas parchadas o con daños producidos por terceros. La garantía en baterías es de dos meses por descargas o defectos de fabricación. Partes electricas no tienen garantía. Pasados 30 días no se aceptan otros tipos de productos en mal estado o incompletos.]]></text>
+				<text><![CDATA[Es obligatorio presentar esta Factura Original para efectos de reclamos y garantías de Accesorios y Repuestos. Pasados 30 días no se aceptan devoluciones ni productos en mal estado o incompletos. La garantía en llantas es de tres meses por defectos de fabricación, no se aceptan llantas parchadas o con daños producidos por terceros. La garantía en baterías es de dos meses por descargas o defectos de fabricación. Partes electricas no tienen garantía. ]]></text>
 			</staticText>
 			<line>
 				<reportElement x="7" y="31" width="252" height="1" uuid="450364e0-e110-48b6-a57d-e478de7a0d36"/>

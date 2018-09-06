@@ -63,14 +63,11 @@ detalleVenta.idVenta=$P{idVenta}]]>
 	<title>
 		<band height="129" splitType="Stretch">
 			<image>
-				<reportElement x="21" y="3" width="222" height="109" uuid="0ef06c18-05a6-4829-ad27-4a302e3970c7"/>
-				<imageExpression><![CDATA["/Users/CSR/NetBeansProjects/moto10racingHBT/web/imgs/m10r-Logo.jpg"]]></imageExpression>
+				<reportElement x="34" y="6" width="203" height="103" uuid="a7e775b8-db54-44c1-8c2d-7d25a2dac862"/>
+				<imageExpression><![CDATA["C:\\Users\\lenovo\\Documents\\NetBeansProjects\\moto10racingZzz\\web\\imgs\\m10r-Logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="52" y="116" width="165" height="13" uuid="da97f258-ea5e-4883-8f58-ede4e712d3dd"/>
-				<textElement>
-					<font fontName="Helvetica" size="13" isBold="true"/>
-				</textElement>
+				<reportElement x="71" y="109" width="127" height="15" uuid="48572ddf-9f08-4de7-808d-f79877ad1c1a"/>
 				<text><![CDATA[REGIMEN SIMPLIFICADO]]></text>
 			</staticText>
 		</band>
@@ -186,6 +183,22 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				</textElement>
 				<text><![CDATA[$]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="23" y="4" width="21" height="13" uuid="d109b7d7-5ce4-4686-8620-badb16aa16c9"/>
+				<textFieldExpression><![CDATA[$F{unidadesVendidas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="3" width="67" height="13" uuid="e623d34d-311e-4f75-a653-bb27c89a55be"/>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="156" y="2" width="36" height="13" uuid="33ea9f19-f91b-4c91-aaff-7865e0e53505"/>
+				<textFieldExpression><![CDATA[$F{valorVentaProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="37" height="15" uuid="0e9444d5-f3f9-4278-a600-6b1a0979030b"/>
+				<textFieldExpression><![CDATA[$F{totalDetalleVenta}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<summary>
@@ -194,18 +207,11 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				<reportElement x="79" y="7" width="168" height="14" uuid="eea23eba-ab34-4a9e-8874-8a80c25edf3e"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="5" y="37" width="258" height="76" uuid="859d2ba3-9198-4784-8a45-37ff8d1666d4"/>
-				<textElement textAlignment="Center">
-					<font fontName="SansSerif" size="8"/>
-				</textElement>
-				<text><![CDATA[Es obligatorio presentar esta Factura Original para efectos de reclamos y garantías de Accesorios y Repuestos. La garantía en llantas es de tres meses por defectos de fabricación, no se aceptan llantas parchadas o con daños producidos por terceros. La garantía en baterías es de dos meses por descargas o defectos de fabricación. Partes electricas no tienen garantía. Pasados 30 días no se aceptan otros tipos de productos en mal estado o incompletos.]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="170" y="8" width="6" height="15" uuid="a3b3d608-166b-4d4c-9a7a-0ea40818f426"/>
+				<reportElement x="148" y="8" width="6" height="15" uuid="a3b3d608-166b-4d4c-9a7a-0ea40818f426"/>
 				<text><![CDATA[$]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="77" y="7" width="99" height="15" uuid="750d8049-79af-4ce1-9f1f-e25e560f2b4d"/>
+				<reportElement x="77" y="7" width="77" height="15" uuid="750d8049-79af-4ce1-9f1f-e25e560f2b4d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -214,6 +220,17 @@ detalleVenta.idVenta=$P{idVenta}]]>
 			<line>
 				<reportElement x="7" y="28" width="252" height="1" uuid="4a5b0f6b-f3d1-4d1b-bd8f-28e022e4a1d3"/>
 			</line>
+			<staticText>
+				<reportElement x="3" y="34" width="257" height="76" uuid="b708b58a-6072-49a3-8fd9-1c754871260b"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<text><![CDATA[Es obligatorio presentar esta Factura Original para efectos de reclamos y garantías de Accesorios y Repuestos. Pasados 30 días no se aceptan devoluciones ni productos en mal estado o incompletos. La garantía en llantas es de tres meses por defectos de fabricación, no se aceptan llantas parchadas o con daños producidos por terceros. La garantía en baterías es de dos meses por descargas o defectos de fabricación. Partes electricas no tienen garantía. ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="156" y="8" width="68" height="15" uuid="95161696-7b31-432a-8870-aa3373fb9cac"/>
+				<textFieldExpression><![CDATA[$V{totalVenta}]]></textFieldExpression>
+			</textField>
 		</band>
 	</summary>
 </jasperReport>

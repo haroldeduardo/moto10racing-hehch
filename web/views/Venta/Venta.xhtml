@@ -15,7 +15,7 @@
                 <h3></h3>
                 <h:form>
                     <h:panelGrid width="1010px" style="margin: 0 auto;">
-                        <p:commandButton value="Nueva Venta" style="font-family: sans-serif; font-size: 22px; width: 198px; height: 55px; color: coral" actionListener="#{ventaBean.numeracionVenta()}" update=":formFacturaVenta" action="#{ventaBean.enableBoton()}"/>
+                        <p:commandButton value="Nueva Venta" style="font-family: sans-serif; font-size: 22px; width: 202px; height: 55px; color: coral" actionListener="#{ventaBean.numeracionVenta()}" update=":formFacturaVenta" action="#{ventaBean.enableBoton()}"/>
                     </h:panelGrid>
                 </h:form>
                 <h3></h3>
@@ -117,7 +117,9 @@
                         </h:panelGrid>
                             <h6></h6>
                             <p:commandButton value="Aceptar" style="width: 100px; height: 38px" actionListener="#{ventaBean.ingresarVentaFULL()}" update=":formFacturaVenta" disabled="#{!ventaBean.enabled}" action="#{ventaBean.disableBoton()}"/>
-                            <p:commandButton value="Imprimir" style="width: 100px; height: 38px" disabled="#{!ventaBean.enabled}"/>
+                            <h:commandLink id="linkImprimir" actionListener="#{ventaBean.reporteImpresionFacturaVenta()}" target="_blank" disabled="#{!ventaBean.enabled}" action="#{ventaBean.disableBoton()}">
+                                <p:graphicImage url="/imgs/impresora.jpg"/>
+                            </h:commandLink>
                             <p:commandButton value="Cancelar" style="width: 100px; height: 38px" action="#{ventaBean.limpiarFacturaVenta()}" update=":formFacturaVenta" disabled="#{!ventaBean.enabled}"/>
                     </p:panel>
                     <p:dialog id="dialogClientes" widgetVar="dialogDatosClientes" modal="true" resizable="true" showEffect="explode" hideEffect="explode" style="text-align:center">
