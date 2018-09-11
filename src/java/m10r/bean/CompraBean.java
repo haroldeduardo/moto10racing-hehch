@@ -498,7 +498,7 @@ public class CompraBean implements Serializable {
         
         System.out.println("SaLOMéeeeeeeeeeeeeeeeeees");
         
-        this.empleado.setIdEmpleado(1); /// aún por definir idEmpleado !!!!!!!!!!
+        this.empleado.setIdEmpleado(3); /// aún por definir idEmpleado !!!!!!!!!!
         
         System.out.println("SaLOMéeeeeeeeeeeeeeeeeees");
         
@@ -549,7 +549,7 @@ public class CompraBean implements Serializable {
 
         System.out.println("Testeadooo");
         /*this.empleado.setIdEmpleado(uBean.getUsuario().getIdEmpleado());*/
-        this.empleado.setIdEmpleado(1);
+        this.empleado.setIdEmpleado(3);
         System.out.println("Salomeeeee Test");
         int idP = this.persona.getIdPersona();
         int idE = this.empleado.getIdEmpleado();

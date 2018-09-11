@@ -27,7 +27,7 @@
                                 <h:panelGrid id="gridBuscarEmpPro" columns="8">
                                     <p:outputLabel value="Cliente: " style="font-size: 16px; font-weight: bold"/>
                                         <p:inputText id="inpTexCliente" value="#{ventaBean.identificacionPersona}" size="23" placeholder="----- Ingrese C.C o Nit -----"  converter="#{Integer}" converterMessage="Valor Erroneo" disabled="#{!ventaBean.enabled}">
-                                            <p:ajax event="keyup" delay="1000" listener="#{ventaBean.agregarDatosPersonaPorIdentificacion()}" update=":formFacturaVenta:gridDatosCliente :formFacturaVenta:inpTexCliente"/>
+                                            <p:ajax event="keyup" delay="3000" listener="#{ventaBean.agregarDatosPersonaPorIdentificacion()}" update=":formFacturaVenta:gridDatosCliente :formFacturaVenta:inpTexCliente"/>
                                         </p:inputText> 
                                             <p:commandButton value="+" oncomplete="PF('dialogDatosClientes').show();" update=":formFacturaVenta:dialogClientes" disabled="#{!ventaBean.enabled}"/>
                                     <p:outputLabel value="Forma de Pago: " style="font-size: 16px; font-weight: bold"/>
@@ -59,7 +59,7 @@
                         <h:panelGrid id="gridBuscarProducto" columns="3">
                             <p:outputLabel value="Código de Producto: " style="font-size: 16px; font-weight: bold"/>
                                 <p:inputText id="inpTexProducto" value="#{ventaBean.codigoProducto}" size="27" placeholder="---- Digite Código Producto ----" disabled="#{!ventaBean.enabled}">
-                                    <p:ajax event="keyup" delay="1000" listener="#{ventaBean.mostrarDatosCantidadProductoPorCodigo()}" update=":formFacturaVenta:gridBuscarProducto"/>
+                                    <p:ajax event="keyup" delay="3000" listener="#{ventaBean.mostrarDatosCantidadProductoPorCodigo()}" update=":formFacturaVenta:gridBuscarProducto"/>
                                 </p:inputText>
                             <p:commandButton value="+" oncomplete="PF('dialogDatosProductos').show();" update=":formFacturaVenta:dialogProductos" disabled="#{!ventaBean.enabled}"/>
                         </h:panelGrid>
@@ -151,6 +151,8 @@
                         <p:column headerText="Email" style="text-align:center">
                             <h:outputText value="#{per.correoPersona}"/>
                         </p:column>
+                                     
+                                
                         <p:column headerText="Seleccione" style="text-align:center; font-size:13px">
                             <p:commandButton value="Seleccionar" actionListener="#{ventaBean.agregarDatosPersona(per.idPersona)}" oncomplete="PF('dialogDatosClientes').hide();" update=":formFacturaVenta:gridDatosCliente"/>
                         </p:column>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="295" pageHeight="502" columnWidth="267" leftMargin="14" rightMargin="14" topMargin="10" bottomMargin="6" uuid="e4a54f21-47d7-4d3a-a0e7-180989a4f209">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="418" pageHeight="502" columnWidth="390" leftMargin="14" rightMargin="14" topMargin="10" bottomMargin="6" uuid="e4a54f21-47d7-4d3a-a0e7-180989a4f209">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -51,7 +51,7 @@ detalleVenta.idVenta=$P{idVenta}]]>
 	<field name="unidadesVendidas" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="totalDetalleVenta" class="java.math.BigDecimal">
+	<field name="totalDetalleVenta" class="java.lang.Float">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
 	<variable name="totalVenta" class="java.math.BigDecimal" calculation="Sum">
@@ -67,7 +67,7 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				<imageExpression><![CDATA["C:\\Users\\lenovo\\Documents\\NetBeansProjects\\moto10racingZzz\\web\\imgs\\m10r-Logo.jpg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="71" y="109" width="127" height="15" uuid="48572ddf-9f08-4de7-808d-f79877ad1c1a"/>
+				<reportElement x="71" y="111" width="127" height="15" uuid="48572ddf-9f08-4de7-808d-f79877ad1c1a"/>
 				<text><![CDATA[REGIMEN SIMPLIFICADO]]></text>
 			</staticText>
 		</band>
@@ -78,7 +78,7 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				<reportElement x="7" y="6" width="253" height="82" uuid="55916227-77e6-4549-a515-6ebe8e1e63ea"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="142" y="10" width="46" height="20" uuid="cc66653a-0a49-4922-a2d7-21cbba95a0ac"/>
+				<reportElement x="145" y="10" width="46" height="20" uuid="cc66653a-0a49-4922-a2d7-21cbba95a0ac"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font isBold="true"/>
 				</textElement>
@@ -113,11 +113,6 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				</textElement>
 				<text><![CDATA[Producto]]></text>
 			</staticText>
-			<textField>
-				<reportElement x="95" y="10" width="43" height="20" uuid="25049555-afed-4208-8a5f-1f188d29dfad"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{identificacionPersona}]]></textFieldExpression>
-			</textField>
 			<staticText>
 				<reportElement x="19" y="10" width="73" height="20" uuid="c7be01e0-3e79-45f3-9586-9e89211bbb56"/>
 				<textElement verticalAlignment="Middle">
@@ -165,10 +160,18 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				</textElement>
 				<text><![CDATA[Valor Unitario]]></text>
 			</staticText>
+			<line>
+				<reportElement x="385" y="30" width="1" height="58" uuid="c870503c-8f25-48d3-93e1-42bfcdeac660"/>
+			</line>
+			<textField>
+				<reportElement x="93" y="10" width="43" height="19" uuid="dedec60a-188f-45a9-9782-a5cccf432254"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{identificacionPersona}]]></textFieldExpression>
+			</textField>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="19" splitType="Stretch">
+		<band height="42" splitType="Stretch">
 			<staticText>
 				<reportElement x="148" y="4" width="6" height="15" uuid="176690bc-2759-45c3-ab68-927f8147e254"/>
 				<textElement>
@@ -188,7 +191,7 @@ detalleVenta.idVenta=$P{idVenta}]]>
 				<textFieldExpression><![CDATA[$F{unidadesVendidas}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="64" y="3" width="67" height="13" uuid="e623d34d-311e-4f75-a653-bb27c89a55be"/>
+				<reportElement x="62" y="3" width="83" height="39" uuid="e623d34d-311e-4f75-a653-bb27c89a55be"/>
 				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -202,7 +205,7 @@ detalleVenta.idVenta=$P{idVenta}]]>
 		</band>
 	</detail>
 	<summary>
-		<band height="113" splitType="Stretch">
+		<band height="114" splitType="Stretch">
 			<rectangle radius="10">
 				<reportElement x="79" y="7" width="168" height="14" uuid="eea23eba-ab34-4a9e-8874-8a80c25edf3e"/>
 			</rectangle>
